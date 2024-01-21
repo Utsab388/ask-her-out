@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask Her Out</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fce4ec;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #question {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    #yes {
+      background-color: #4caf50;
+      color: #fff;
+    }
+
+    #no {
+      background-color: #f44336;
+      color: #fff;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+
+    #no:hover {
+      animation: moveButton 1s infinite;
+    }
+
+    @keyframes moveButton {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(1000px);
+      }
+    }
+
+    #bunny-page {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #bunny {
+      width: 150px;
+      height: 150px;
+      background-image: url('https://media1.tenor.com/images/7c12fae69e5388431ea18af2a07df3b5/tenor.gif?itemid=14460664');
+      background-size: cover;
+      animation: bunnyDance 2s infinite;
+    }
+
+    @keyframes bunnyDance {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="container">
+    <div id="question">Would you like to go out with me?</div>
+    <div id="buttons">
+      <button id="yes" class="button" onclick="showBunnyPage()">Yes</button>
+      <button id="no" class="button" onclick="moveNoButton()">No</button>
+    </div>
+  </div>
+
+  <div id="bunny-page">
+    <div id="bunny"></div>
+  </div>
+
+  <script>
+    function showBunnyPage() {
+      document.getElementById("container").style.display = "none";
+      document.getElementById("bunny-page").style.display = "flex";
+    }
+
+    function moveNoButton() {
+      // You can add additional logic or actions here
+      // This is just a simple example
+    }
+  </script>
+</body>
+</html>
